@@ -1,0 +1,78 @@
+
+/* 
+VARIABLES--- espacio que guardamos en la memoria
+    Global: cualquier selector pueda agarrar desde cualquier lugar 
+
+    :root{
+        --variable:
+    }
+
+    propiedad: var(--variable)
+
+
+
+
+FILTER
+        none
+        blur(px)
+        brightness(0-1)
+        contrast(number or %)
+        drop-shadow(medidas)
+        greyscale(%, 1)
+        hue-rotate(deg) ---> gama de colores, invierte tonos
+        invert(%,50% se queda sin colores,  o nada para invertir al 100%)  
+        opacity(%)
+        saturate(%)
+        sepla(%)
+        url("filter.svg#filter-id");
+
+
+OTRAS PROPIEDADES
+        Direction: ltr (left-to-right) | rtl | initial| inherit --> direccion del contenido como ()
+        letter-spacing: 4px;  --> separacion de las letras
+        scroll-behavior: smooth; --->  comportamiento del scrool cuando hacemos enlaces con id 
+        user-selected: ;  none |  --> no permitir seleccionar al usuario
+        text-shadow __> buscar en internet\
+
+        SELECTORES:
+            https://www.3wschool.com/cssref/css_selector.asp
+*/
+
+:root{
+    --colorAmor: #f30;
+    --azulClaro: #6666ff;
+}
+
+.container{
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+   
+}
+.caja1{
+    background: var(--colorAmor);
+}
+.caja2{
+    --colorAmor: #000;
+    background: var(--colorAmor);
+}
+
+
+
+
+.imagen{
+    /* filter: blur(10px); */
+    filter: contrast(150%);
+    filter: drop-shadow(0px 0px 5px #000) saturate(190%) sepia( );
+}
+.imagen2 img{
+    width: 500px;
+    filter: drop-shadow(0px 0px 4px #000) ;
+    
+}
+
+.texto{
+    padding: 20px;
+    font-size: 25px;
+    background: aquamarine;
+}

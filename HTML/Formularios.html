@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+
+
+<body>
+    <h1>FORMULARIOS
+    </h1>
+
+    <!--
+
+        form para hacer un pormulario
+        action="" atributo para mandar la informacion a algun lado
+       
+        
+        label: etiqueta para un imput
+        for=" "  para dirigir a un input con el id
+
+        input para entrada
+        type="" tipo de entrada text/color.... buscar
+        placeholder="" para poner texto de fondo en el input
+        minlenght minimo de ltras
+        required para que sea obligatorio los atributos
+
+
+    -->
+
+
+    <form action="">
+        <label for="name">Nombre</label>
+        <input type="text" placeholder="Nombre" id="name" minlength="4" required>
+
+
+        <br>
+        <br>
+
+        <label for="email">Email</label>
+        <input type="email" placeholder="email" id="email" minlength="4" required>  
+        <input type="password" placeholder="contraseña" id="password"required>
+
+        <br>
+
+        <input type="color"> 
+       
+        <br>
+       
+        <label for="numero">numero</label>
+        <input type="number" id="numero"placeholder="numero">
+        <br>
+        <br>
+
+
+
+     <h3>selecciona tu pais</h3>
+     <!--
+
+        lista de opticiones
+     -->
+     <select>
+         <option>Mexico</option>
+         <option selected>Argentina</option>
+         <option>brazil</option>
+     </select>
+     <br>
+     
+
+
+
+
+     <h3>Escoge tu turnp</h3>
+     <!--
+         name para poder tener solo una opcion
+     -->
+     <label>
+         <input type="radio" name="turno">Masculino
+     </label>
+     <label>
+         <input type="radio" name="turno">Femenino
+     </label>
+     <br>
+
+
+
+
+     <h3>Acepta terminos y condiciones</h3>
+     <label>
+         <input type="checkbox"> acepto todo
+     </label>
+     <br>
+    
+
+     <h3>agrega un comentario</h3>
+     <textarea cols="40" rows="7"></textarea>
+
+
+
+
+
+
+        <br>
+        <br>
+        <input type="reset" value="resetear">
+        <input type="submit" value="enviar a todos">
+
+
+
+    </form>
+</body>
+</html>

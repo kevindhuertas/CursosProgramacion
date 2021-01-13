@@ -1,0 +1,55 @@
+/* 
+AREAS es un conjunto de celdas
+            es mejor tomar celdas 
+
+
+            
+*/
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+}
+.grid-container{
+    border: 5px solid grey;
+    background-color: grey;
+    margin: 15px;
+    display: grid;
+    grid-template-areas:
+    "header header header"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "aside main main"
+    "footer footer footer";
+    grid-template-rows: repeat(auto-fill, 1fr);
+    height: 92vh;
+    
+}
+
+ul li{
+    display: inline-block;
+}
+
+.grid-item{
+   padding: 25px;
+}
+
+.grid-header{
+    background-color: orange;
+    grid-area: header;
+}
+.grid-main{
+    background-color: aquamarine;
+    grid-area: main;
+}
+.grid-aside{
+    background-color: violet;
+    grid-area: aside;
+}
+.grid-footer{
+    background-color: greenyellow;
+    grid-area: footer;
+}

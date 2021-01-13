@@ -1,0 +1,202 @@
+
+/* 
+    PSEUDO-ELEMENTOS
+        ::first-line   | Block .. inline-block --estulo
+        ::firt-letter  | Block
+        
+        ::placeholder   ---- cambiar estilo al placeholder
+        ::selection    ---- cambiar estilo de sellecion
+
+        ::after         | Hijos- propiedad: Content (necesario) -Inline
+        ::before        | Hijos- propiedad: Content (necesario) -Inline
+        
+
+
+
+    TRANSITION: ....
+                velocidad de cambio de estilo
+    PSEUDO-CLASES
+            ::hover --todo lo que pasa cuando pasas el mouse encima
+            
+            ::link --estilo cuando no se ha visitado la pagina <a>
+            ::visited -- cuando uel link ya se visito 
+
+            :active --cambia estilo cuando dejas precionado un boton
+            :focus --cuando el elemento esta seleccionado (input)
+            :lang(es, en...) --- un estilo que se le da depende el idio
+                        p:lang(en)
+    
+    OBJECT-FIT: ajusta el tamaño de una imagen a su contenedor
+                cover   --- ajusta al container
+                none --- se queda en su container pero con la resolucion original
+                contain --- al tamaño de su container (la imagen puede ser mas peque q el contain)
+                scale-down -- verifica con que quedarse si contain o none.. y seleccion la mejor
+    OBJECT-POSITION: hace un enfoque de donde queramos de la imagen
+                left-right-top-button
+                pex-em-%-etc
+    
+    CURSOR: cambiar el estilo del curso
+            bucar "lista de valores de cursore css"
+                cursor: pinter;
+    
+
+
+    COLORES ---- RED -GREEN - BLUE ...... 0-255 gamas de colores
+    
+            Hexadesimal     --16 unidades 
+                            0123456789
+                            abcdef
+                        #fff  --> red -green-blue
+                        #ffff --> red -green-blue -alfa
+                        #ffffff ---> 2red - 2green- 2blue (si queremos alfa ponermos 2)
+                       
+                        menor 0 - 9 mayor   (0-255)
+                        menor a - f mayor  (0 -255)
+
+
+                        #10
+
+            RGB         rgb(0,0,0)   --> negro
+                        rgb(0,0,255)  --> azul
+                        rgb(255,0,255) --> violeta
+                        rgb(100,0,255) --> morado
+                        rgb(255,255,255) --> blanco
+
+
+            RGBA         rgba(0,0,0,.8)   --> a: alfa == transparente 
+
+
+*/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.texto{
+    padding: 20px;
+}
+
+.texto::first-line{
+    color: greenyellow;
+}
+.texto::first-letter{
+    color: hotpink;
+    font-size: 40px;
+}
+
+
+form{
+background-color: indianred;
+margin: 50px auto;
+width: 50%;
+padding: 100px;
+
+}
+input{
+    padding: 6px;
+    width: 100%;
+}
+input::placeholder{
+    color: indigo;
+    font-size: 20px;
+}
+.texto::selection{
+    color: khaki;
+    background-color: lawngreen;
+}
+
+
+b::before{
+    content: "me suscribi a ";
+    color: lightblue;
+}
+b::after{
+    content: "after";
+    color: lightcoral;
+}
+
+
+/* SEUDOCLASES------------------------------------------------- */
+
+.caja1{
+    height: 200px;
+    width: 200px;
+    background-color: olivedrab;
+    transition: all 1s, border-color .5s;
+            /* transition: background-color 1s, height 1s,width 1s; */
+    border-radius: 10px;
+    border: 10px solid greenyellow;
+}
+
+.caja1:hover{
+    background: orange;
+    height: 240px;
+    width: 240px;
+    border-color: hotpink;
+}
+
+a:link{
+    color: red;
+    background: turquoise;
+}
+a:visited{
+    color: violet;
+    background: tomato;
+}
+
+
+.caja2{
+    height: 200px;
+    width: 200px;
+    margin: 50px auto;
+    background-color: tomato;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.caja2:active{
+    background-color: thistle;
+}
+
+.caja3{
+    height: 100px;
+    width: 200px;
+    margin:  auto;
+    background:lightblue;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.5s;
+}
+.caja3:focus{
+    background: lawngreen;
+    padding: 20px;
+}
+
+.caja4{
+    margin: 40px;
+}
+.caja4 p:lang(en){
+    background:blue;
+}
+
+
+.caja5{
+    border: 5px solid blue;
+    height: 300px;
+    width: 200px;
+    margin: 25px;
+}
+.caja5 img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left;
+
+}
+
+
+.caja6{
+    margin: 25px;
+    height: 300px;
+    width: 200px;
+    background-color: #aa99aa;
+}

@@ -1,0 +1,76 @@
+/*
+selector {              lo que queremos cmabiar
+    propiedad: valor;   propiedad que queremos cambiar color,borde,tamaño
+}
+*/
+
+/* UNIVERSAL PARA TODO----
+*{
+    color: red;   
+}
+*/
+
+/* POR TIPO----------------
+h1{
+    color: red;   
+}
+input{
+    color: red;   
+}
+*/
+
+/* CLASES--------------------- 
+.clasesprueba{
+    color: green;
+}
+*/
+
+/* ID----------------------------Identificador unico (se puede repetir pero no es bueno hacer eso) 
+   #######
+#id-element{
+    color: greenyellow;
+}
+*/
+/* Crear un Atributo---------------------------- poner como un atributo dentro de la etiqueta 
+[rancio="sii"]{
+    color: hotpink;
+}
+*/
+ /* ANIDADO /DESENDIENTE--- Editar una etiqueta dentro de otro --------------------------- 
+h2 b{
+    color: hotpink;
+}
+.h2-class b{
+    color: indianred;
+}
+*/
+/*
+PSEUDO-CLASES------------------Qiue cuando pases el mouse por encima cambia la propiedad  
+b:hover{
+    color: red;
+}
+
+
+ESPECIFICIDAD----------Logica de css (jerarquias)--------------------------------
+css--- lee en cascado--> osea el ultimo cambio es el que toma en cuenta
+
+resolvio el problema de --> la jerarquia
+
+jerarquia 
+^                            !important     ---- en .ccs-> color:grey !important
+|                        estilos en linea   ---- <h1 style="color"
+|                    identificadore        ---- <h1 id="whatever">
+|                 clases/pseudos-clases/atributos
+|             elementos                     ---  h1/h2
+|           pseudoelementos
+
+
+SI estan en el mismo nivel de jerarquia -- el ultima propiedad que cambio (cascada) es el que se queda
+
+Si estan en distinto nivel de jerarquia --- queda la propiedad con jerarquia mas alta
+*/
+
+
+
+
+

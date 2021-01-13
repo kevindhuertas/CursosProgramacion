@@ -1,0 +1,17 @@
+{
+  "name": "cursonodejs",
+  "version": "0.0.1",
+  "description": "este es mi primer curso de nodejs",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "desarrollo": "ode index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

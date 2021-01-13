@@ -1,0 +1,55 @@
+/* MEDOTOLOGIA BEM
+
+Evitar confictos con muchas clases, etc por doquier 
+Y darnos cuenta de a que estamos cambiando el estilo de manera facil
+Revisar codigo en html
+*/
+
+
+/* 
+MEDIDAS
+MEDIDA RELATIVA: dependen de algo (variable)
+MEDIDA FIJA: fijas como cm, px, m...
+
+Variable RELATIVAS:
+font-size: _em-->  16 pixeles defecto o si no se era de la caja contenedora
+.contact-form{
+font-size: 25 px;
+}
+
+.contact-form__h2{
+    font-size: 5em; ---> 5*25
+}
+
+
+
+*{
+    Para toda la pagina
+}
+*/
+
+*{
+    font-family: 'Sansita Swashed', cursive; /* Tipogracias en font.google   ///// georgia, time --> por si no encuentra la primera tipografia*/
+}
+
+.contact-form{
+ padding: 0px;
+ margin: 0px;
+}
+
+.contact-form__p-h2{
+    font-size: 54px;
+    line-height: 2; /* tamaño de la caja que ocupa la letra, 1-> la caja es del tamaño de la letra*/
+    font-weight: 900; /*grosor de la letra (ancho) */
+    background-color:gray;
+    color: rgb(30, 30, 201);
+}
+
+
+/* NORMALIZE
+
+
+
+
+
+*/

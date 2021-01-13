@@ -1,0 +1,104 @@
+/* 
+
+FLEX BLOCKS---- Cajas flexibles (Nueva forma de maquetar)-------------------------
+    
+PROPIEDADES
+        FLEXBOX (CONTAINER)
+                    flex-direction: row (-->)
+                                    row-reverse (<--)
+                                    column (-->)
+                                    column -reverse (<--)
+
+                    flex-warp:  warp (abajo)
+                                nowarp
+                                warp-reverse (^ arriba)
+                    
+                    flex-flow: column warp ---conbinacion de las dos 
+                    
+                    
+                    justify-content:    center          (todo al centro)
+                                        space-around    ( dejar todo el espacio posible entre cajas, quita margin a los costados  (Podemos trabajar con los margin individualmente)
+                                        space-between   (margin auto, hace que tengan un mismo margen las cajas, pero a los costados no es igual que todos los espacios
+                                        pace-evenly     (margin especifico para todos los espacios de los items(incluido elos costados)
+                    
+
+                    Align-items: (solo en una linea flex)
+                                    flex-star               --- poner en el top (no se estira en el eje y)
+                                    center                  --- centrar verticalmente
+                                    flex-end                --- poner la parte de abajo 
+                                    stretch (por depefecto) --- hace que se estire atravez del eje y (se puede correguir con un height)
+                                    baseline (cross axis)   --- convinarlo con el wrap-reverse para mover la parte de avajo
+                                                            
+
+                    Align-content:  (CUANDO HAY VARIAS LINEAS.. se alinian como se quiere)
+                                                      ^
+                                    mismas de arriba  |
+                                                      |
+        
+        
+        ****PROPIEDADES DE LOS ITEMS*****
+                    Align-self:  center, flex-star, flex-end, baseline, strech
+                    
+                    Margin: posicionar con margin auto
+                            el auto tomaria todo el espacio diponible de donde se le diga
+                            margin-top: auto;  --> lo pone abajo
+                            margin-button: auto;  --> lo pone arriba
+                            margin-left: auto;  --> lo pone a la derecha
+                            margin: auto;  --> lo pone en el centro 
+
+                    Flex-grow: 1, 2, 3, 4, 5 (de cuanto espacio sobra, se divide para cuanto queramos):hace que al elemento (container o item) tome el espacio que sobra. 
+                                        flex-grow: 1; elemento  
+                    flex-shrink: 1,2,3,4,5;  El espacio que cede <--->despues de llegar a el width dicho.
+                                            si le damos un numero mayor, ejemplo 2.. la caja va a ceder dos veces mas de espacio comparado con las demas
+                    Flex-basis: 300px; (parecido al width pero es mas importante en jerarquia)
+                                        Es mejor usar este que widht porque se intenta trabajar con cajas flexibles
+                     
+                    Flex: Flex-grow, Flex-shrink, Flex-basis    
+                          es unu short jam, almenso hay que pasarle 1 parametro
+                    Order: como z index, pero en el eje que apunta el eje x ---> osea el emento con mas order, esta mas a la derecha ---> si la direccion del axis esta a la derecha
+                    
+                    
+
+
+
+    
+
+
+*/
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100vh;
+
+}
+.flex-item{
+    color: seashell;
+    background-color: royalblue;
+ 
+    padding: 15px;
+    height: 100px;
+    width: 300px;
+    min-width: 100px;
+    
+
+
+}
+
+.sky{
+    background: #63bb63;
+    
+}
+.green{
+    background: greenyellow;
+    flex-grow: 5;
+
+}
+.orange{
+    background: chocolate;
+    flex-shrink: 4;
+}

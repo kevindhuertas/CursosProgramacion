@@ -1,0 +1,207 @@
+/*  
+
+
+Eviatr poner all porque ocupa muchos recursos
+
+Propiedad inherit ---> es heredad la propiedad del container
+
+
+TRNSITION:
+    trasition-property:  properties (bacgro) - all 
+    trasition-duration: duration
+    trasition-delay: duration del delay
+    transition-timing-function:    linear|ease| ease-in|ease-out|ease-in-out| steps(int, start|end)|initial|inherit;
+    transition:
+
+
+ANIMATIONS
+@keyframes *nombre *{}
+        animation-name:
+        animation-duration:
+        animation-delay:
+        animation-timing-funtion: (transition values)
+                                    cubic-bezier (x,x,y,y)
+                                            Podemos generar animaciones en inspeccionar del chrome
+                                            Generaador de curvas de bezier en google (BUSCAR)
+        animation-iteration-count: number | infinite
+        animation-fill-mode: --->  El como va a quedar al final
+                             none|backwards -> queda como inicia
+                                | forwards  ->  queda como termina la animacion
+                                | both  -> inicia con los valores inicioales de la animacion en @keyframe
+                                | initial|inherit;
+
+        animation-direction: normal| reverse | alternative | alternative-reverse;
+    
+        @keyfram nombre{
+                from{
+                }
+                to{
+                }
+
+                0%{
+                }
+                50%{
+                }
+                100%{
+                }
+            }
+
+
+    TRANSFORM
+            Transform: --> posiciona en los ejes XY , mejor usar este que otras propiedades por tema de recursos
+                        translateX(x) - translateT(y) 
+                        --acortado--- translate(x - x,y)
+
+                        scale(xy - x , y)  ---- scaleX(x) - scaleY(y)
+                        
+                        rotate(angle Unit) ---> 90 deg
+                        rotateX(angleUnit) - rotateZ(angleUnit)
+                        rotate3D(angleUnit)
+
+                        Shew(angleUnite) ---> perspectiva
+
+                        https://www.w3schools.com/cssref/css3_pr_transform.asp
+    
+    BACKGROUND:
+            background-color:    --- darle color
+            background-image: url() ---  
+            background-size:  x, y, auto, 
+                                        cover  ---> se ajusta al height
+                                        contain ---> se ajusta la resolucion al contenedor...  se repite si sobra espacio
+            background-repeat: repeat | no-repeat;
+            background-position: posicionVertical posicionHorizontal
+                                left - top - bottom  - right - center ++ left -top - bottom -right  - center 
+
+            background-attachment: 
+                                scroll | fixed | inherit
+
+
+            background-clip:    (recorta)desde donde se va a ver la imagen o background
+                                border- box | padding-box | content box
+            background-origin:  crea a partir de ese origen q determinemos
+                                border- box | padding-box | content box
+            
+
+    
+        Clip-pad: hacer figuras con los objetos---:
+        BUSCARGAR GENERADORES en google
+
+
+
+*/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    
+}
+.container{
+    background: rgb(35, 93, 255);
+    height: 100%;
+    
+    padding: 40px;
+
+}
+
+.caja{
+    margin: 20px;
+    background: rgb(120, 255, 172);
+    height:100px;
+    width: 100px;
+    transition-property: background,left;
+    transition-duration: 1s;
+    position: relative;
+    left: 0;
+    
+    
+}
+.container:hover > .caja{
+    background: rgb(52, 0, 112);
+    left: 80%;
+}
+.caja:first-child{
+    transition-timing-function: linear;
+}
+.caja:nth-child(2){
+    transition-timing-function: linear;
+}
+.caja:nth-child(3){
+    transition-timing-function: ease;
+}
+.caja:nth-child(4){
+    transition-timing-function: ease-in;
+}
+.caja:nth-child(5){
+    transition-timing-function: ease-in-out;
+}
+.caja:nth-child(6){
+    transition-timing-function: cubic-bezier(1, 0, 2, 1);
+}
+
+    
+
+/* ------------------------- - - ------------------- */
+
+.container-animation{
+
+    background: navy;
+    height: auto;
+    padding: 50px;
+}
+.caja-animation{
+    background-color: olive;
+    height: 100px;
+    width: 100px;
+    animation-name: desplazarse;
+    animation-duration: 2s;
+    position: relative;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes desplazarse {
+    0%{
+ background: orange;
+ left: 0%;
+    }
+    50%{
+        background: greenyellow;
+       
+    }
+    100%{
+        background: rgb(141, 255, 141);
+        left: 90%;
+    }
+}
+
+.container-transform{
+
+    background: rgb(47, 255, 193);
+    height: auto;
+    padding: 50px;
+}
+.caja-transform{
+    background-color: rgb(62, 109, 0);
+    height: 100px;
+    width: 100px;
+    display: flex;
+    color: #fff;
+}
+
+
+.caja-transform b{
+    margin: auto;
+}
+
+.container-background{
+    background: grey;
+    margin: 0px;
+    height: 400px;
+    width: 100%;
+    
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1200px-Lion_waiting_in_Namibia.jpg) ;
+    background-size: cover;     
+    background-attachment:fixed;
+
+
+}

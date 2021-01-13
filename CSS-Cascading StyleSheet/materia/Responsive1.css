@@ -1,0 +1,62 @@
+/* 
+RESPONSIVE DESIGN: --- Metodologia con el objetivo para adaptar todo el contenido en distintas resoluciones
+
+    Estructuras Flexibles (contenedores flexibles, imagenes, video flexibles)
+    Media Queries   --> @
+{
+    Reglas:
+     @Media : se usa en consultas de medios para aplicar diferentes estilos para diferentes tipos/dispositivos de medios. 
+
+        ancho y alto de la ventana gráfica
+        ancho y alto del dispositivo
+        orientacion (la tableta / telefono esta en modo horizontal o vertical)
+        resolucion
+
+        all
+            Apto para todos los dispositivos
+        print
+            Destinado a material impreso y visualizacion de documentos en una pantalla en el modo vista de impresion
+        screen 
+            Destinado a las pantallas
+        spreech
+            destinado a sintetizadores de voces
+
+    Operadores AND y OR
+
+    Orientacion: landscape y portrait
+}
+
+    
+@media ---- scrreen (que sea una pantalla)----- and/or  --  min-width: 200px
+regla --- a donde se le aplica (tipo)---  condicional and/or --- (la condicion)
+
+
+
+
+    METODOLOGIAS:  Que tipo de pagina va a vender mas?
+        MOBILE-FIRST   -------> de celular a desktop (por buenas practicas)
+        DESKTOP-FIRST
+        CONTENT-FIRST--> segun el contenido 
+
+
+
+*/
+
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+
+.div-responsive{
+        background-color: lightskyblue;
+    }
+
+
+
+@media screen and (min-width: 600px) and (max-width: 1000px){
+
+    .div-responsive{
+        background: limegreen;
+    }
+
+}

@@ -1,0 +1,183 @@
+/* 
+grid container
+Grid Item  ---- es un contenerdor (los de bloques dentro de un div) <p>
+Grid Cell  ---- celdas imaginarias que hay dentro del grid contenedo
+Grid track (column y Row) --- Row -> fila ----     Column->Columna |
+Grid area --- areas que selecciones  y Consecutivas (mas de una celda) no puede ser una L o diagonales
+grid Line (column y row) las lineas 
+
+
+
+    PROPIEDADES 
+            (CONTAINER) grid-template-rows  -->
+            (CONTAINER) grid-template-column
+
+                        Unidades auto:
+                                fr : como decir un -flex-grow-reparta el espacio que sobra
+            
+            (CONTAINER) grid-row-gap        (Margin que hay entre celdas)
+            (CONTAINER) grid-column-gap        (entre las celdas )
+            -----acortado------- (CONTAINER)  grid-gap: row colum
+
+            (ITEM)  grid-row-start              :1      =   grid-row: 1/3:
+            (ITEM)  grid-row-end                :3      =
+            (ITEM)  grid-column-start
+            (ITEM)  grid-column-end
+            ---acortado---(ITEM)  grid-row
+                            (ITEM)  grid-column
+
+                    Seleccionar el primer elemento:   grid-item:firt-child{  }   
+                                otro elemento      grid-item:nth-child(num.elemento*){  }     
+                    span: para decirle cuantas columnas quiero  
+                            grid-row: 1/ span 3;  "despues de row 1 ocupa 3 rows mas "
+
+            repeat(cantidad*, tamaño*)  repetide la cantidad con los tamaños que tengan
+                    grid-template-rows:    repeat(3, 150px) 
+                    grid-template-rows:    repeat(4, 150px 1fr 150x) se repite 4 veces esa combinacion 
+
+
+    CONCEPTOS
+
+        Grid implicito y explicito
+                Diferencia: implicito es cuando no esta definido pero igual tomas caracteristicas
+
+
+    PROPIEDADES PARA IMPLICITO--> controlas las celdas que se crean automaticamente o explixitamente 
+                grid-auto-row: 
+                grid-auto-column: 
+
+                grid-auto-flow:  ---> Donde se vna a ubicar las cedas generadas
+                                Row(default) ---Column ---Dense (rellena los espacios)
+                
+    GRID DINAMICO --- estructuras autoajustables(tamaño conjuntamente)
+            
+            minmax(min,max)   ---> medidas minimas y maximas   
+            mincontent  --> tamaño minimo para el 
+            max-content
+
+            Cantidad
+
+            auto-fill: --->  segun las caracetristicas de los min,max.. se van ordenando las celdas
+            auto-fit:   ---> cuando ya no hay más cajas se rellenan y ajustan al contenedor. 
+
+
+
+    ALINEACION Y CONTROL DE FLUJO   
+        _alineacion es dentro de cada celdas y no alineacion total de flex container.
+        _cada celda seria un flex
+            align --verticalmente
+            justify horizontalmente
+
+            justify-items:  ; alinea items caja, horizontalmente)
+            align-items :   ;  (verticalmente)
+            stretch (default): star-center-end
+            ---acortado---- place-items: align-items justify-items
+
+
+    ALINEACION DE FILAS Y COLUMNAS  
+            justify-content: ; start, center,end   --alinea columnas 
+            align-content: ;  star, centerm end    ---alinea filas
+            stretch(default)
+
+
+                    space-venly  (solo content)
+
+        
+            align-self: ;  --alinear verticalmente al style de un solo item
+            justify-self: ; --alinear horizontalmente a un solo item
+            ---acortado--- place-self:  align-seft justify-self;
+
+            order (igual que flex)
+
+    
+    SHORTHAND estos exiten pero es mejor utilizarlos individualemente
+
+        grid-template: row/column     ---> (grid container) 
+        grid-template: area unidad
+
+        grid: ...... se puede poner todas las propiedades pero confunde un poco
+
+*/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+body{
+    background: radial-gradient(circle,#fff,#bbb);
+    padding: 15px;
+
+}
+
+.grid-container{
+    border: 6px solid greenyellow;
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 1fr 1fr 1fr;
+}
+
+.grid-item{     
+    border: 2px solid #000;
+}
+
+.grid-item:first-child{
+    background-color: hotpink;
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+.grid-item:nth-child(2){
+background-color: green;
+grid-column: 3/ span 2;
+}
+
+
+
+
+
+.grid-containerDinamico{
+    background-color: grey;
+    border: 6px solid greenyellow;
+    display: grid;
+    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-itemDinamico{     
+  font-size: 20px;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+
+.grid-containerNombre{
+    display: grid;
+    background-color: grey;
+    grid-template-columns: 
+            [LineaIzquienda]
+            150px
+            150px
+            150px
+            [finMain];
+    grid-template-rows:
+            [first-line]
+            150px
+            [second-line]
+            150px
+            [third-line]
+            150px
+            [four-line];
+}
+.grid-itemNombre{
+    border: 2px solid black;
+    background-color: lightgreen;
+}
+.grid-itemNombre:first-child{
+    background-color: lightpink;
+    grid-row: first-line / third-line;
+}
+.grid-itemNombre:nth-child(2){
+    background-color: lightskyblue;
+    grid-column: 2/finMain;
+
+}
