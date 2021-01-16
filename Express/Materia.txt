@@ -1,0 +1,21 @@
+Express:  Es un framework para hacer aplicacions WEB del lado del servidor
+          Es un modulo de terceros para node.js
+          Facilita escribir aplicaciones Web 
+                Se complementa con otros modulos
+                Express se enfoca mas en sel servidor (pedir y mandar datos)
+          Muy rapido al trabajar con node.js
+          Habiliada para compartir codigo entre el explorador y el servidor (al usar el mismo lenguaje de programacion js)
+                Compartir algoritmos o logica
+                compartir codigo, librerias y mas..
+          Stack MEAN / MERN
+                Conjunto de tecnologias para crear una aplicacion web , todo con javascript
+                Es como una tendencia de utilizar solo javascript para hacer todo una web
+          "Desarrollo web moderno", comunicacion de tiempo real (Websockets, WebRTC) 
+
+          Permite escribir  Node.js mucho mas Facilita
+          Podemos hacer MVC Apps
+
+
+
+
+
